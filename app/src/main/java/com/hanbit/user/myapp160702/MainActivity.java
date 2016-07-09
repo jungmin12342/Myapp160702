@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -18,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hanbit.user.myapp160702.ContactActivity.Contact_Activity;
 import com.hanbit.user.myapp160702.Member.JoinActivity;
 import com.hanbit.user.myapp160702.calc.CalcService;
 import com.hanbit.user.myapp160702.calc.CalcServivce;
@@ -95,14 +95,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button18:
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                /* emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                         "mailto","abc@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
-                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));*/
+                this.startActivity(new Intent(this, Main8Activity.class));
                 break;
             case R.id.button7:
-                intent = new Intent(MainActivity.this, CalendarActivity.class);
+                intent = new Intent(MainActivity.this, Contact_Activity.class);
                 //this.startActivity(new Intent(this, CalendarActivity.class));
                 startActivity(intent);
                 break;
