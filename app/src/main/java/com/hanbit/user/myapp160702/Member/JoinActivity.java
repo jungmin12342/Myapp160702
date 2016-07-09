@@ -26,7 +26,6 @@ public class JoinActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_join);
         init();
     }
-
     @Override
     public void onClick(View v) {
         String id = etID.getText().toString();

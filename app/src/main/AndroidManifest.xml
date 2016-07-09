@@ -27,7 +27,8 @@
         <activity android:name=".Main6Activity" />
         <activity android:name=".Main7Activity" />
         <activity android:name=".Member.JoinActivity" />
-        <activity android:name=".Loginactivity"></activity>
+        <activity android:name=".Loginactivity" />
+        <activity android:name=".ContactActivity.Contact_Activity"></activity>
     </application>
 
 </manifest>

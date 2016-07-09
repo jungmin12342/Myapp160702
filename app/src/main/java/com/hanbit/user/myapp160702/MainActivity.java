@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -30,7 +31,7 @@ import java.util.GregorianCalendar;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     Button btn;
-    Button btn1, btn2, btn3, btn4, btn5, btn6;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
     TextView textview;
     int year, month, day, hour, minute;
     Intent intent;
@@ -87,10 +88,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         KaupBean bean = new KaupBean();
         btn5 = (Button)findViewById(R.id.button15);
         btn5.setOnClickListener(this);
+        btn7 =(Button)findViewById(R.id.button18);
+        btn7.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.button18:
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","abc@gmail.com", null));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
+                startActivity(Intent.createChooser(emailIntent, "Send email..."));
+                break;
             case R.id.button7:
                 intent = new Intent(MainActivity.this, CalendarActivity.class);
                 //this.startActivity(new Intent(this, CalendarActivity.class));
