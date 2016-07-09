@@ -1,4 +1,4 @@
-package com.hanbit.user.myapp160702;
+package com.hanbit.user.myapp160702.calc;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hanbit.user.myapp160702.MainActivity;
+import com.hanbit.user.myapp160702.R;
+import com.hanbit.user.myapp160702.class_implement.KaupBean;
+
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener  {
     TextView textView, textView1;
     Button button;
@@ -17,6 +21,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     MainActivity.Data data;
     Button btn1, btn2, btn3, btn4;
     Button bcbtn;
+    int num, num1;
+    KaupBean bean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +38,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.button:
                 //textView1.setText(plus(arg1,arg2));
             //    plus(arg1, arg2);
+               bean.setHeight(Integer.parseInt(editText1.getText().toString()));
+               bean.setWeight(Integer.parseInt(editText2.getText().toString()));
+                textView1.setText(plus(bean.getHeight(), bean.getWeight()));
                 Log.d("???","???");
                 //덧샘하는 거
                 break;
@@ -39,12 +48,21 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(getApplicationContext(),"clicked",Toast.LENGTH_LONG).show();
                 break;
             case R.id.button3:
+                num = Integer.parseInt(editText1.getText().toString());
+                num1 = Integer.parseInt(editText2.getText().toString());
+                textView1.setText((num - num1));
                 //빼기하기
                 break;
             case R.id.button4:
+                num = Integer.parseInt(editText1.getText().toString());
+                num1 = Integer.parseInt(editText2.getText().toString());
+                textView1.setText((num / num1));
                 //나누기
                 break;
             case R.id.button5:
+                num = Integer.parseInt(editText1.getText().toString());
+                num1 = Integer.parseInt(editText2.getText().toString());
+                textView1.setText((num * num1));
                 //곱하기
                 break;
             case R.id.button9:
